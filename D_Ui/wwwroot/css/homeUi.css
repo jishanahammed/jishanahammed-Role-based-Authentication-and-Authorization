@@ -1,0 +1,66 @@
+﻿@media  (min-width: 992px) {
+    .mojib-100 img{
+        height:150px;
+        width:200px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .mojib-100 h1{
+        font-size:80px;
+        margin-top:40px;
+        margin-bottom:40px;
+        color:#29ABE2;
+        font-weight:700;
+    }
+    .gov-logo-home-ui img{
+        height:100px;
+        width:100px;
+        margin-top:20px;
+    }
+    .gov-logo-home-ui h1{
+        font-size: 80px;
+        margin-top:100px;
+        margin-bottom: 40px;
+        color: #29ABE2;
+        font-weight: 700;
+    }
+
+    .gov-logo-login-ui img {
+        height: 100px;
+        width: 100px;
+        margin-top: 20px;
+    }
+    .gov-logo-login-ui h1 {
+        font-size: 50px;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        color: #29ABE2;
+        font-weight: 700;
+    }
+    }
+
+@media  (max-width: 992px) {
+    .mojib-100 img {
+        height: 150px;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .gov-logo-home-ui img {
+        height: 80px;
+        width:80px;
+        margin-top: 20px;
+    }
+    .gov-logo-home-ui h1 {
+        font-size: 50px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        color: #29ABE2;
+        font-weight: 700;
+    }
+    .gov-logo-login-ui img {
+        height: 80px;
+        width: 80px;
+        margin-top: 20px;
+    }
+}

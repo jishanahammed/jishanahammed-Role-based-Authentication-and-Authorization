@@ -1,0 +1,123 @@
+﻿@model IEnumerable<D_Ui.Models.ViewMode.RegistrationViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    int SN = 1;
+}
+
+<div class="content-header">
+    <div class="container-fluid ">
+        <div class="breadcrumb d-flex justify-content-between align-items-center shadow pl-3 pr-3">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="/AdminManage/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active">User</li>
+            </ol>
+            <div>
+                <a asp-action="Create"><i class="fa fa-plus"></i>  Add New User</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex w-100">
+                    <div class="">
+                        <h5> <i class="fas fa-list"></i>  All User</h5>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div id="paginatedsection">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered">
+                            <thead class="thead-deft">
+                                <tr>
+                                    <th>
+                                        #
+                                    </th>
+                                    <th>
+                                        Full Name
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Phone Number
+                                    </th>
+                                    <th>
+                                        Department
+                                    </th>
+                                    <th>
+                                        Role Name
+                                    </th>
+                                    <th>
+                                        Create Date
+                                    </th>
+
+                                    <th> Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr id="@SN">
+                                        <td>
+                                            @SN
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FullName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Email)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Department)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RoleName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.date)
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="/AdminManage/UserSettings/Edit?id=@item.Id" class="btn-info btn-flat btn-sm mr-2"> <i class="fa fa-edit"></i> </a>
+                                            <a href="#" onclick="DeleteCategoryFunction(@item.Id, '@SN')" class="btn-danger btn-flat btn-sm mr-2"> <i class="fas fa-trash"></i> </a>
+
+                                        </td>
+                                    </tr>
+                                    SN++;
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+<script>
+    $(document).ready(function () {
+        $('#adminUser').addClass('active');
+
+    });
+
+</script>
+}

@@ -1,0 +1,122 @@
+﻿@model D_Ui.Models.ViewMode.RegistrationViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="breadcrumb d-flex justify-content-between align-items-center shadow">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="/AdminManage/Home/Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="AdminManage/UserSettings/Create">Add New User</a></li>
+                <li class="breadcrumb-item active"> Add New User</li>
+            </ol>
+            <div>
+
+                <a asp-action="Index"><i class="fa fa-arrow-left mr-2"></i>Back To List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-plus"></i>
+                    Add New User
+                </h3>
+
+            </div>
+            <div class="card-body">
+                <div class="tab-content p-0">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                <div class="form-group row">
+                                    <label asp-for="FullName" class="control-label col-md-4 "></label>
+                                    <div class="col-md-8"> <input asp-for="FullName" class="form-control" required /> </div>
+                                    <span asp-validation-for="FullName" class="text-danger   col-12  text-right"></span>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label asp-for="Email" class="control-label col-md-4 "></label>
+                                    <div class="col-md-8"> <input type="email" asp-for="Email" class="form-control" required/> </div>
+                                    <span asp-validation-for="Email" class="text-danger   col-12  text-right"></span>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label asp-for="PhoneNumber" class="control-label col-md-4 "></label>
+                                    <div class="col-md-8"> <input asp-for="PhoneNumber" class="form-control" required /> </div>
+                                    <span asp-validation-for="PhoneNumber" class="text-danger   col-12  text-right"></span>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label asp-for="Designation" class="control-label col-md-4 "></label>
+                                    <div class="col-md-8"> <input asp-for="Designation" class="form-control" required /> </div>
+                                    <span asp-validation-for="Designation" class="text-danger   col-12 text-right"></span>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label asp-for="Department" class="control-label col-md-4 "></label>
+                                    <div class="col-md-8">
+                                        <input asp-for="Department" class="form-control" required />
+                                    </div>
+                                    <span asp-validation-for="Department" class="text-danger   col-12 text-right"></span>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label asp-for="RoleName" class="control-label col-md-4"> Role Name</label>
+                                    <div class="col-md-8">
+                                        <select asp-for="RoleName" class="form-control" asp-items="ViewBag.taList" required>
+                                            <option value="">Select Role Name</option>
+                                        </select>
+                                        
+                                    </div>
+                                    <span asp-validation-for="RoleName" class="text-danger  col-12 text-right"></span>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label asp-for="Password" class="control-label col-md-4 "></label>
+                                    <div class="col-md-8"> <input asp-for="Password" class="form-control" required /> </div>
+                                    <span asp-validation-for="Password" class="text-danger  col-12 text-right"></span>
+                                </div>
+                                <div class="form-group row">
+                                    <label asp-for="ConfirmPassword" class="control-label col-md-4 "></label>
+                                    <div class="col-md-8"> <input asp-for="ConfirmPassword" class="form-control" required /> </div>
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger  col-12 text-right"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts {
+        <script>
+        $(document).ready(function () {
+            $('#adminUser').addClass('active');
+
+        });
+
+    </script>
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
